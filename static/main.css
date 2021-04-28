@@ -1,0 +1,15 @@
+.question {
+	background-color: rgba(0,100,230,10%);
+	border: black solid 2px;
+	border-radius: 5px;
+	padding: 20px;
+	margin: 5px;
+}
+
+.fgl {
+	display: inline-block-left;
+}
+
+.fgr {
+	display: inline-block-right;
+}
