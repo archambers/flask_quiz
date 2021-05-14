@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block page_content %}
+    <form method="GET">
+        <label for="tag">Filter by tag:</label>
+        <input type="text" id="tag" name="tag">
+        <input type="submit" value="Submit">
+    </form>
+    <!--
+    {% for tag in tags %}
+        <div class="question">
+            <p>{{ tag.label }}</p>
+        </div>
+    {% endfor %}
+-->
+	{% for card in cards %}
+		<div class="question">
+        <a href='/question/{{ card.id }}'><h2>Question #{{ card.id }}</h2></a>
+    	<h3>{{ card.question }}</h3>
+	    </div>
+	{% endfor %}
+{% endblock page_content %}

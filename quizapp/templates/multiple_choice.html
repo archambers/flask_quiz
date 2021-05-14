@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block page_content %}
+	<div class="question">
+        <h5>{{ card.question }}</h5>
+    	<form method="POST" action="">
+    		{{ form.hidden_tag() }}
+    		<fieldset class="form-group">
+    			<legend class="border-bottom mb-4">{{ legend }}</legend>
+    			<div class="form-group">
+    				{{ form.answer.label(class="form-control-label") }}
+    				{{ form.answer() }}
+    			</div>
+    		</fieldset>
+			{{ form.submit(class="btn btn-success") }}
+                
+    	</form>
+        {% if current_user.email == 'admin@admin.com' %}
+        <div class="fgl">
+            <a class="btn btn-warning" href="{{ url_for('edit_question', card_id=card.id) }}">Edit      
+                    </a>
+            <form action="{{ url_for('delete_question', card_id=card.id)}}" method="POST">
+                    <input class="btn btn-danger" type="submit", value="Delete">
+            </form>
+        </div>
+        {% endif %}
+    </div>
+{% endblock page_content %}

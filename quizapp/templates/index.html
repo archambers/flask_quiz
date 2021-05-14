@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz App{% endblock %}
+
+{% block page_content %}
+<div class="question">
+	{% if current_user.is_authenticated %}
+	<h1>Hello {{ current_user.email }}</h1>
+	{% else %}
+	<h1>Welcome</h1>
+	{% endif %}
+</div>
+{% endblock page_content %}
