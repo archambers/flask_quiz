@@ -22,6 +22,11 @@
     				{{ form.tags(class="form-control form-control-lg") }}	
     			</div>
     		</fieldset>
+            {% if card %}
+            <form action="{{ url_for('delete_question', card_id=card.id)}}" method="POST" class="float-left">
+                <input class="btn btn-danger float-left" type="submit", value="Delete">
+            </form>
+            {% endif %}
     		<div class="form-group">
     			{{ form.submit(class="btn btn-outline-info") }}
     		</div>

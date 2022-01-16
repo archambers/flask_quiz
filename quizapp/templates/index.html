@@ -3,7 +3,7 @@
 {% block title %}Quiz App{% endblock %}
 
 {% block page_content %}
-<div class="question">
+<div class="card question">
 	{% if current_user.is_authenticated %}
 	<h1>Hello {{ current_user.email }}</h1>
 	{% else %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block page_content %}
+
+{% for question in questions %}
+	<div class="card">
+        <a class="card-header" href='/question/{{ card.id }}'><h2>Question #{{ card.id }}</h2></a>
+    	<h3>{{ card.question }}</h3>
+    </div>
+{% endfor %}
+
+{% endblock page_content %}
